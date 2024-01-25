@@ -26,8 +26,8 @@
             var e1 = new { EmpId = 111, Name = "Ravi", Salary = 70000 };
 
             Console.WriteLine(e1.Name);
-            e1.Salary = 10;
-            e1.Brand = "sdfsdf";
+            //e1.Salary = 10;
+            //e1.Brand = "sdfsdf";
             //Product p3 = new Product(3);
             Product p3 = new Product { Id = 3 };
 
