@@ -33,6 +33,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OODemo5", "OODemo5\OODemo5.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDELanguages", "IDELanguages\IDELanguages.csproj", "{AA77056F-FCCA-48C8-B500-9C3FA578876F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionsDemo", "CollectionsDemo\CollectionsDemo.csproj", "{FC0F8EBE-7DFB-4392-985C-703A682867BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicCollectionDemo", "DynamicCollectionDemo\DynamicCollectionDemo.csproj", "{1806FA3B-5C69-437D-9726-727CF8E27C84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{AA77056F-FCCA-48C8-B500-9C3FA578876F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA77056F-FCCA-48C8-B500-9C3FA578876F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA77056F-FCCA-48C8-B500-9C3FA578876F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC0F8EBE-7DFB-4392-985C-703A682867BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC0F8EBE-7DFB-4392-985C-703A682867BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC0F8EBE-7DFB-4392-985C-703A682867BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC0F8EBE-7DFB-4392-985C-703A682867BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1806FA3B-5C69-437D-9726-727CF8E27C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1806FA3B-5C69-437D-9726-727CF8E27C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1806FA3B-5C69-437D-9726-727CF8E27C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1806FA3B-5C69-437D-9726-727CF8E27C84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
