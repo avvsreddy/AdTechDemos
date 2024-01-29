@@ -3,41 +3,43 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstConsoleApp", "FirstConsoleApp\FirstConsoleApp.csproj", "{F8CD9BB6-F253-4AD1-B32B-8E3C32B7BE6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstConsoleApp", "FirstConsoleApp\FirstConsoleApp.csproj", "{F8CD9BB6-F253-4AD1-B32B-8E3C32B7BE6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{9D3D0FAC-B893-42F6-87EF-9F873AC1D30F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{9D3D0FAC-B893-42F6-87EF-9F873AC1D30F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathLib", "MathLib\MathLib.csproj", "{3E6B29F8-6CF1-4827-B87A-59E7A7E45E84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathLib", "MathLib\MathLib.csproj", "{3E6B29F8-6CF1-4827-B87A-59E7A7E45E84}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{750FB6E5-212E-4E3C-B7FB-D31985E58CD8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Layer", "Business Layer", "{2F97F252-7160-42BA-AA5C-AF324011091A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWinFormsApp", "SimpleWinFormsApp\SimpleWinFormsApp.csproj", "{A4FE4D66-5181-4F18-A4C5-1CF791C5B52A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleWinFormsApp", "SimpleWinFormsApp\SimpleWinFormsApp.csproj", "{A4FE4D66-5181-4F18-A4C5-1CF791C5B52A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs and References", "Labs and References\Labs and References.csproj", "{9D861CD2-F8CF-4365-8A6A-D89DBF962919}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labs and References", "Labs and References\Labs and References.csproj", "{9D861CD2-F8CF-4365-8A6A-D89DBF962919}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OO Concepts Demo", "OO Concepts Demo", "{0F491858-8A4D-4AC7-911E-69CD8CB1D680}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OODemo1", "OODemo1\OODemo1.csproj", "{FF39F5CB-BF14-4DD2-A655-CB192761CC50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OODemo1", "OODemo1\OODemo1.csproj", "{FF39F5CB-BF14-4DD2-A655-CB192761CC50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OODemo2", "OODemo2\OODemo2.csproj", "{8544DD47-D79B-4891-9226-4F54269D4BF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OODemo2", "OODemo2\OODemo2.csproj", "{8544DD47-D79B-4891-9226-4F54269D4BF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OODemo3", "OODemo3\OODemo3.csproj", "{77DC2EEB-047E-4221-B946-55F2767E23B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OODemo3", "OODemo3\OODemo3.csproj", "{77DC2EEB-047E-4221-B946-55F2767E23B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainerTraineeApp", "TrainerTraineeApp\TrainerTraineeApp.csproj", "{F5127BD9-D448-4A39-BC45-4B56EB84D011}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrainerTraineeApp", "TrainerTraineeApp\TrainerTraineeApp.csproj", "{F5127BD9-D448-4A39-BC45-4B56EB84D011}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo4", "Demo4\Demo4.csproj", "{6A64D102-EEDB-49C4-8F5D-2D1ACE294504}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo4", "Demo4\Demo4.csproj", "{6A64D102-EEDB-49C4-8F5D-2D1ACE294504}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OODemo5", "OODemo5\OODemo5.csproj", "{61550FA8-8B52-465D-A67A-A66812C9BE9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OODemo5", "OODemo5\OODemo5.csproj", "{61550FA8-8B52-465D-A67A-A66812C9BE9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDELanguages", "IDELanguages\IDELanguages.csproj", "{AA77056F-FCCA-48C8-B500-9C3FA578876F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IDELanguages", "IDELanguages\IDELanguages.csproj", "{AA77056F-FCCA-48C8-B500-9C3FA578876F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionsDemo", "CollectionsDemo\CollectionsDemo.csproj", "{FC0F8EBE-7DFB-4392-985C-703A682867BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollectionsDemo", "CollectionsDemo\CollectionsDemo.csproj", "{FC0F8EBE-7DFB-4392-985C-703A682867BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicCollectionDemo", "DynamicCollectionDemo\DynamicCollectionDemo.csproj", "{1806FA3B-5C69-437D-9726-727CF8E27C84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicCollectionDemo", "DynamicCollectionDemo\DynamicCollectionDemo.csproj", "{1806FA3B-5C69-437D-9726-727CF8E27C84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionsDemo", "ExceptionsDemo\ExceptionsDemo.csproj", "{AD7E70C4-914A-44B6-A85A-7809485120F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionsDemo", "ExceptionsDemo\ExceptionsDemo.csproj", "{AD7E70C4-914A-44B6-A85A-7809485120F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandlingDemo1", "FileHandlingDemo1\FileHandlingDemo1.csproj", "{4B7C8C50-4D6A-401B-A791-0F9FC28ED9FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{AD7E70C4-914A-44B6-A85A-7809485120F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD7E70C4-914A-44B6-A85A-7809485120F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD7E70C4-914A-44B6-A85A-7809485120F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B7C8C50-4D6A-401B-A791-0F9FC28ED9FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B7C8C50-4D6A-401B-A791-0F9FC28ED9FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B7C8C50-4D6A-401B-A791-0F9FC28ED9FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B7C8C50-4D6A-401B-A791-0F9FC28ED9FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -40,6 +40,10 @@
                 {
                     Console.WriteLine(ex.Message);
                 }
+                finally
+                {
+                    // resource management
+                }
             }
 
 
