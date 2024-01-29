@@ -4,6 +4,33 @@
     {
         static void Main(string[] args)
         {
+
+            // get all files in a folder
+
+            string[] files = Directory.GetFiles("e:\\test");
+            // display
+            foreach (string file in files)
+            {
+                // display size of the file
+                FileInfo fileInfo = new FileInfo(file);
+                Console.WriteLine($"Name {file} and its size is {fileInfo.Length}");
+            }
+
+            // get all drives in a system
+
+            DriveInfo[] driveInfos = DriveInfo.GetDrives();
+            Console.WriteLine("Drives");
+            foreach (var item in driveInfos)
+            {
+                Console.WriteLine(item.Name);
+                Console.WriteLine($"Total Size: {item.TotalSize} Free Size {item.TotalFreeSpace}");
+
+            }
+
+        }
+
+        private static void ReadLine()
+        {
             // read line by line
             StreamReader reader = new StreamReader("e:\\test\\people.txt");
             string line = string.Empty;
