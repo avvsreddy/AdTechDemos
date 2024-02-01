@@ -7,6 +7,7 @@ namespace SimpleBank.Business.TestProject
 
         }
     }
+    // Moq  - mock framework
 
     [TestClass]
     public class AccountManagerUnitTest

@@ -58,6 +58,12 @@
             return accountToDeposit;
         }
 
+
+        public Account GetAccount(int accountNo)
+        {
+            return accounts.Find(a => a.AccountNo == accountNo);
+        }
+
         public Account Withdraw(int accNo, int amount, int pin)
         {
             // business rules
@@ -80,5 +86,21 @@
             logger.Log($"{DateTime.Now},Withdraw,{accNo},{amount}");
             return accountToDeposit;
         }
+
+
+        public void Transfer(int fromAcc, int toAcc, int amount, int fromAccPin)
+        {
+            // fromAcc must exist
+            // toacc must exist
+            // fromAccPin must match
+            // sufficcient balance in fromAcc
+            // minimum amount to transfer 1000
+            // fromacc balance should decrease
+            // toAcc balance should increase
+
+        }
+
+
+
     }
 }
