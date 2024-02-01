@@ -19,13 +19,7 @@
         }
         public Account Deposit(int accNo, int amount)
         {
-            // account must exist
-            Account accountToDeposit = accounts.Find(a => a.AccountNo == accNo);
-            if (accountToDeposit == null)
-            {
-                // thorw exp
-                throw new AccountNotExistException($"Account {accNo} not exist");
-            }
+            Account accountToDeposit = IsAccountExist(accNo);
 
             // minimum 1000 rs to be deposited
             if (amount < 1000)
@@ -36,8 +30,43 @@
             // if it success, should increase the balance
             accountToDeposit.Balance += amount;
 
+            // save the below details into file
+            //01/02/2024,Deposit,111,2000
+
             return accountToDeposit;
 
+        }
+
+        private Account IsAccountExist(int accNo)
+        {
+            // account must exist
+            Account accountToDeposit = accounts.Find(a => a.AccountNo == accNo);
+            if (accountToDeposit == null)
+            {
+                // thorw exp
+                throw new AccountNotExistException($"Account {accNo} not exist");
+            }
+
+            return accountToDeposit;
+        }
+
+        public Account Withdraw(int accNo, int amount, int pin)
+        {
+            // business rules
+            // account must exist
+            Account accountToDeposit = IsAccountExist(accNo);
+            if (accountToDeposit == null)
+                throw new AccountNotExistException("Account not found");
+            // sufficcient balance
+            if (accountToDeposit.Balance < amount)
+                throw new InsufficcientBalanceException("Less balance");
+            // valid pin
+            if (accountToDeposit.Pin != pin)
+                throw new InvalidPinException("Invalid Pin");
+            // update/reduce the balance
+            accountToDeposit.Balance -= amount;
+
+            return accountToDeposit;
         }
     }
 }
