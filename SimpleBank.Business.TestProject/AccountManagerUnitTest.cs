@@ -1,5 +1,13 @@
 namespace SimpleBank.Business.TestProject
 {
+    class MockTransactionLogger : ITansactionLogger
+    {
+        public void Log(string message)
+        {
+
+        }
+    }
+
     [TestClass]
     public class AccountManagerUnitTest
     {
@@ -8,7 +16,8 @@ namespace SimpleBank.Business.TestProject
         public void Init()
         {
             // exe before every test case
-            target = new AccountManager();
+
+            target = new AccountManager(new MockTransactionLogger());
         }
 
 

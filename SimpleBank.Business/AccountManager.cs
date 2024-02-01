@@ -4,6 +4,8 @@
     {
         private List<Account> accounts = new List<Account>();
 
+        private ITansactionLogger logger = null;
+
         public AccountManager()
         {
             Account account1 = new Account { AccountNo = 111, AccountType = "SAVINGS", Balance = 1000, Pin = 1234 };
@@ -16,6 +18,10 @@
             accounts.Add(account4);
             Account account5 = new Account { AccountNo = 555, AccountType = "SAVINGS", Balance = 1000, Pin = 2323 };
             accounts.Add(account5);
+        }
+        public AccountManager(ITansactionLogger logger) : this()
+        {
+            this.logger = logger; //DIP 
         }
         public Account Deposit(int accNo, int amount)
         {
@@ -32,6 +38,8 @@
 
             // save the below details into file
             //01/02/2024,Deposit,111,2000
+            //TransactionLogger logger = new TransactionLogger();
+            logger.Log($"{DateTime.Now},Deposit,{accNo},{amount}");
 
             return accountToDeposit;
 
@@ -55,8 +63,8 @@
             // business rules
             // account must exist
             Account accountToDeposit = IsAccountExist(accNo);
-            if (accountToDeposit == null)
-                throw new AccountNotExistException("Account not found");
+            //if (accountToDeposit == null)
+            //    throw new AccountNotExistException("Account not found");
             // sufficcient balance
             if (accountToDeposit.Balance < amount)
                 throw new InsufficcientBalanceException("Less balance");
@@ -66,6 +74,10 @@
             // update/reduce the balance
             accountToDeposit.Balance -= amount;
 
+            // save the below details into file
+            //01/02/2024,Deposit,111,2000
+            //ITransactionLogger logger = new TransactionLogger();
+            logger.Log($"{DateTime.Now},Withdraw,{accNo},{amount}");
             return accountToDeposit;
         }
     }
