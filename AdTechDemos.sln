@@ -39,45 +39,55 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicCollectionDemo", "Dy
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionsDemo", "ExceptionsDemo\ExceptionsDemo.csproj", "{AD7E70C4-914A-44B6-A85A-7809485120F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandlingDemo1", "FileHandlingDemo1\FileHandlingDemo1.csproj", "{4B7C8C50-4D6A-401B-A791-0F9FC28ED9FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileHandlingDemo1", "FileHandlingDemo1\FileHandlingDemo1.csproj", "{4B7C8C50-4D6A-401B-A791-0F9FC28ED9FB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ContactsManager", "ContactsManager", "{80518800-0ABF-4086-B641-F94CD98EDE26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactManagerConsoleApp", "ContactManagerConsoleApp\ContactManagerConsoleApp.csproj", "{3DDF6410-3D33-4D78-BF13-85446DEFB661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactManagerConsoleApp", "ContactManagerConsoleApp\ContactManagerConsoleApp.csproj", "{3DDF6410-3D33-4D78-BF13-85446DEFB661}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Delegates", "Delegates", "{4A6429D0-C63C-4130-8174-4BB657D96155}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesDemo1", "DelegatesDemo1\DelegatesDemo1.csproj", "{E44B245B-0965-403A-B98D-36BEB6BF160D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegatesDemo1", "DelegatesDemo1\DelegatesDemo1.csproj", "{E44B245B-0965-403A-B98D-36BEB6BF160D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesDemo2", "DelegatesDemo2\DelegatesDemo2.csproj", "{D14F5617-85BA-4574-AF7E-D6F1746B571F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegatesDemo2", "DelegatesDemo2\DelegatesDemo2.csproj", "{D14F5617-85BA-4574-AF7E-D6F1746B571F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesDemo3", "DelegatesDemo3\DelegatesDemo3.csproj", "{50246F46-5ECC-475A-8078-4A3F6C06D039}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegatesDemo3", "DelegatesDemo3\DelegatesDemo3.csproj", "{50246F46-5ECC-475A-8078-4A3F6C06D039}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Multithreading", "Multithreading", "{666C6B75-01F8-40F0-A7BD-6030C196713D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTDEmo1", "MTDEmo1\MTDEmo1.csproj", "{F5310263-06EF-4AD4-9B1E-FB03D18C29C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTDEmo1", "MTDEmo1\MTDEmo1.csproj", "{F5310263-06EF-4AD4-9B1E-FB03D18C29C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{3201DBB2-806F-4B3F-80CB-6115DB548510}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{3201DBB2-806F-4B3F-80CB-6115DB548510}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTDemo3", "MTDemo3\MTDemo3.csproj", "{4F9299FD-6897-4D05-BBB9-5CD33C997A76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTDemo3", "MTDemo3\MTDemo3.csproj", "{4F9299FD-6897-4D05-BBB9-5CD33C997A76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBank.Business", "SimpleBank.Business\SimpleBank.Business.csproj", "{75FFD4A8-C3AC-4E6A-AF89-3F5A8DACA1B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBank.Business", "SimpleBank.Business\SimpleBank.Business.csproj", "{75FFD4A8-C3AC-4E6A-AF89-3F5A8DACA1B9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Testing", "Unit Testing", "{75A6BA9E-02E9-47E0-A7B8-A280955ECCD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBank.Business.TestProject", "SimpleBank.Business.TestProject\SimpleBank.Business.TestProject.csproj", "{16990F63-E1C6-4D67-A2A9-76BACCE73960}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBank.Business.TestProject", "SimpleBank.Business.TestProject\SimpleBank.Business.TestProject.csproj", "{16990F63-E1C6-4D67-A2A9-76BACCE73960}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AI Case Study", "AI Case Study", "{E2205A35-0DC6-4FFD-9B93-17013EDAB65E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIRecommendation.CoreEngine", "AIRecommendation.CoreEngine\AIRecommendation.CoreEngine.csproj", "{5AAACF2A-EF22-4782-B5B1-DC2EE9E782E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIRecommendation.CoreEngine", "AIRecommendation.CoreEngine\AIRecommendation.CoreEngine.csproj", "{5AAACF2A-EF22-4782-B5B1-DC2EE9E782E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIRecommender.CoreEngine.TestProject", "AIRecommender.CoreEngine.TestProject\AIRecommender.CoreEngine.TestProject.csproj", "{5AE8161A-03AD-430D-A9CB-E5103BA4F2B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIRecommender.CoreEngine.TestProject", "AIRecommender.CoreEngine.TestProject\AIRecommender.CoreEngine.TestProject.csproj", "{5AE8161A-03AD-430D-A9CB-E5103BA4F2B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIRecommender.DataLoader", "AIRecommender.DataLoader\AIRecommender.DataLoader.csproj", "{9F113634-437E-45E9-B83A-B8BBCAA6D9D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIRecommender.DataLoader", "AIRecommender.DataLoader\AIRecommender.DataLoader.csproj", "{9F113634-437E-45E9-B83A-B8BBCAA6D9D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIRecommendation.Aggrigator", "AIRecommendation.Aggrigator\AIRecommendation.Aggrigator.csproj", "{42C46D64-BE82-4BF6-AE8D-BD0CF34D5E34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIRecommendation.Aggrigator", "AIRecommendation.Aggrigator\AIRecommendation.Aggrigator.csproj", "{42C46D64-BE82-4BF6-AE8D-BD0CF34D5E34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIRecommendation.ConsoleApp", "AIRecommendation.ConsoleApp\AIRecommendation.ConsoleApp.csproj", "{F5C6852C-69D6-4591-9515-5D37DC3F677E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIRecommendation.ConsoleApp", "AIRecommendation.ConsoleApp\AIRecommendation.ConsoleApp.csproj", "{F5C6852C-69D6-4591-9515-5D37DC3F677E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADONet Database Programming", "ADONet Database Programming", "{49FA956B-CB58-4718-8DD5-8EA3CB1623D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation Layer", "Presentation Layer", "{0338D9BE-1E19-4343-BF40-2DE8CF8221AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access Layer", "Data Access Layer", "{C0DD864B-B668-4E87-B0E1-A525440A669C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageDepartments.Console", "ManageDepartments.Console\ManageDepartments.Console.csproj", "{1F24AF2F-F511-4314-B707-3047D63580C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageDepartments.DataAccess", "ManageDepartments.DataAccess\ManageDepartments.DataAccess.csproj", "{2FE38955-9EC6-4AFB-BEF2-4F8E977F28A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -205,6 +215,14 @@ Global
 		{F5C6852C-69D6-4591-9515-5D37DC3F677E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5C6852C-69D6-4591-9515-5D37DC3F677E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5C6852C-69D6-4591-9515-5D37DC3F677E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F24AF2F-F511-4314-B707-3047D63580C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F24AF2F-F511-4314-B707-3047D63580C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F24AF2F-F511-4314-B707-3047D63580C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F24AF2F-F511-4314-B707-3047D63580C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FE38955-9EC6-4AFB-BEF2-4F8E977F28A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FE38955-9EC6-4AFB-BEF2-4F8E977F28A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FE38955-9EC6-4AFB-BEF2-4F8E977F28A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FE38955-9EC6-4AFB-BEF2-4F8E977F28A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -234,6 +252,10 @@ Global
 		{9F113634-437E-45E9-B83A-B8BBCAA6D9D3} = {E2205A35-0DC6-4FFD-9B93-17013EDAB65E}
 		{42C46D64-BE82-4BF6-AE8D-BD0CF34D5E34} = {E2205A35-0DC6-4FFD-9B93-17013EDAB65E}
 		{F5C6852C-69D6-4591-9515-5D37DC3F677E} = {E2205A35-0DC6-4FFD-9B93-17013EDAB65E}
+		{0338D9BE-1E19-4343-BF40-2DE8CF8221AB} = {49FA956B-CB58-4718-8DD5-8EA3CB1623D7}
+		{C0DD864B-B668-4E87-B0E1-A525440A669C} = {49FA956B-CB58-4718-8DD5-8EA3CB1623D7}
+		{1F24AF2F-F511-4314-B707-3047D63580C3} = {0338D9BE-1E19-4343-BF40-2DE8CF8221AB}
+		{2FE38955-9EC6-4AFB-BEF2-4F8E977F28A8} = {C0DD864B-B668-4E87-B0E1-A525440A669C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0E6D2675-AE11-4F3C-A90A-FE938236480C}
