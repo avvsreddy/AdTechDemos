@@ -1,6 +1,6 @@
 ﻿namespace ManageDepartments.DataAccess
 {
-    public interface IDepartmentResository
+    public interface IDepartmentRepository
     {
         void Insert(Department department);
         List<Department> GetDepartments();
