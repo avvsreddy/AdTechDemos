@@ -38,10 +38,7 @@ namespace ManageDepartments.DataAccess
             finally { conn.Close(); }
         }
 
-        public Department GetDepartmentById(int id)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public List<Department> GetDepartments()
         {
@@ -81,6 +78,11 @@ namespace ManageDepartments.DataAccess
         }
 
         public List<Department> GetDepartmentsByLocation(string location)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Department GetDepartmentById(int id)
         {
             throw new NotImplementedException();
         }
