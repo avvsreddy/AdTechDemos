@@ -42,7 +42,7 @@ namespace ContactManagerConsoleApp
 
         }
 
-        static IContactsRepository repo = new ContactsRepository(); // DIP
+        static IContactsRepository repo = new EFContactsRepository(); // DIP
         private static void Delete()
         {
             //throw new NotImplementedException();
