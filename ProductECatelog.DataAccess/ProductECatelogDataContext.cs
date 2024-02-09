@@ -16,6 +16,7 @@ namespace ProductECatelog.DataAccess
         // Configure/Map: Entity Class => Table
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Catagory> Catagories { get; set; }
 
     }
 }

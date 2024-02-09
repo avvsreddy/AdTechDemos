@@ -8,6 +8,15 @@ namespace ProductECatelog.UI.ConsoleApp
         static void Main(string[] args)
         {
 
+            // add a new catagory with new product
+            // wirte only oo code
+            Catagory c = new Catagory { Name = "Mobiles" };
+            Product p = new Product { Name = "IPPhone 14", Price = 120000, Brand = "Apple", Catagory = c };
+            ProductECatelogDataContext db = new ProductECatelogDataContext();
+            db.Products.Add(p);
+            db.Catagories.Add(c);
+            db.SaveChanges();
+
         }
 
         private static void Edit()
@@ -43,7 +52,7 @@ namespace ProductECatelog.UI.ConsoleApp
             ProductECatelogDataContext db = new ProductECatelogDataContext();
             // LINQ to Entites
             var allProducts = from p in db.Products
-                              where p.Price <= 100000
+                                  //where p.Price <= 100000
                               select p;
             foreach (var p in allProducts)
             {
@@ -54,7 +63,7 @@ namespace ProductECatelog.UI.ConsoleApp
         private static void Insert()
         {
             // save product info
-            Product p = new Product { Name = "IPhone 15", Price = 100000 };
+            Product p = new Product { Name = "IPhone 15 Plus", Price = 140000 };
             ProductECatelogDataContext db = new ProductECatelogDataContext();
             db.Products.Add(p);
             db.SaveChanges();

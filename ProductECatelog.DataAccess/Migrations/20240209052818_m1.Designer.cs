@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProductECatelog.DataAccess;
 
@@ -10,9 +11,11 @@ using ProductECatelog.DataAccess;
 namespace ProductECatelog.DataAccess.Migrations
 {
     [DbContext(typeof(ProductECatelogDataContext))]
-    partial class ProductECatelogDataContextModelSnapshot : ModelSnapshot
+    [Migration("20240209052818_m1")]
+    partial class m1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,23 +23,6 @@ namespace ProductECatelog.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("ProductECatelog.Entities.Catagory", b =>
-                {
-                    b.Property<int>("CatagoryID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CatagoryID"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CatagoryID");
-
-                    b.ToTable("Catagories");
-                });
 
             modelBuilder.Entity("ProductECatelog.Entities.Product", b =>
                 {
@@ -50,9 +36,6 @@ namespace ProductECatelog.DataAccess.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("CatagoryID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -63,20 +46,7 @@ namespace ProductECatelog.DataAccess.Migrations
 
                     b.HasKey("ProductID");
 
-                    b.HasIndex("CatagoryID");
-
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("ProductECatelog.Entities.Product", b =>
-                {
-                    b.HasOne("ProductECatelog.Entities.Catagory", "Catagory")
-                        .WithMany()
-                        .HasForeignKey("CatagoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Catagory");
                 });
 #pragma warning restore 612, 618
         }
