@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProductECatelog.DataAccess;
 
@@ -10,9 +11,11 @@ using ProductECatelog.DataAccess;
 namespace ProductECatelog.DataAccess.Migrations
 {
     [DbContext(typeof(ProductECatelogDataContext))]
-    partial class ProductECatelogDataContextModelSnapshot : ModelSnapshot
+    [Migration("20240209081342_tpc")]
+    partial class tpc
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

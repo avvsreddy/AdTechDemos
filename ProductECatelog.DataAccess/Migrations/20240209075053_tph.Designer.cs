@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProductECatelog.DataAccess;
 
@@ -10,9 +11,11 @@ using ProductECatelog.DataAccess;
 namespace ProductECatelog.DataAccess.Migrations
 {
     [DbContext(typeof(ProductECatelogDataContext))]
-    partial class ProductECatelogDataContextModelSnapshot : ModelSnapshot
+    [Migration("20240209075053_tph")]
+    partial class tph
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,8 +26,6 @@ namespace ProductECatelog.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.HasSequence("PersonSequence");
 
             modelBuilder.Entity("ProductECatelog.Entities.Catagory", b =>
                 {
@@ -47,10 +48,14 @@ namespace ProductECatelog.DataAccess.Migrations
                 {
                     b.Property<int>("PersonID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValueSql("NEXT VALUE FOR [PersonSequence]");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseSequence(b.Property<int>("PersonID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PersonID"));
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("nvarchar(8)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -70,9 +75,11 @@ namespace ProductECatelog.DataAccess.Migrations
 
                     b.HasKey("PersonID");
 
-                    b.ToTable((string)null);
+                    b.ToTable("People");
 
-                    b.UseTpcMappingStrategy();
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Person");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("ProductECatelog.Entities.Product", b =>
@@ -131,7 +138,7 @@ namespace ProductECatelog.DataAccess.Migrations
                     b.Property<int>("Discount")
                         .HasColumnType("int");
 
-                    b.ToTable("Customer");
+                    b.HasDiscriminator().HasValue("Customer");
                 });
 
             modelBuilder.Entity("ProductECatelog.Entities.Supplier", b =>
@@ -146,7 +153,7 @@ namespace ProductECatelog.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("Suppliers");
+                    b.HasDiscriminator().HasValue("Supplier");
                 });
 
             modelBuilder.Entity("ProductECatelog.Entities.Product", b =>

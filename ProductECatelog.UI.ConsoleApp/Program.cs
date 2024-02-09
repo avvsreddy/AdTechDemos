@@ -7,16 +7,45 @@ namespace ProductECatelog.UI.ConsoleApp
     {
         static void Main(string[] args)
         {
+            ProductECatelogDataContext db = new ProductECatelogDataContext();
+            // add new supplier
 
-            // add a new catagory with new product
-            // wirte only oo code
-            Catagory c = new Catagory { Name = "Mobiles" };
-            Product p = new Product { Name = "IPPhone 14", Price = 120000, Brand = "Apple", Catagory = c };
+            var s = new Supplier { Email = "supp1@mail.com", GSTNo = "123-123", Location = "Bangalore", Mobile = "1111111", Name = "supp1", TradeLicenceNo = "111-111" };
+
+            // add new customer
+            var c = new Customer { CustomerType = "gold", Discount = 20, Email = "cust1@mail.com", Location = "Hyderabad", Mobile = "34534534", Name = "cust1" };
+
+
+            //db.Suppliers.Add(s);
+            //db.Customer.Add(c);
+            //db.SaveChanges();
+
+            var custs = db.Customer.ToList();
+
+
+        }
+
+        private static void NewProductWithOldCatagory()
+        {
+            ProductECatelogDataContext db = new ProductECatelogDataContext();
+            // Add new Product with existing catagory
+            var p = new Product { Name = "Galaxy 24", Brand = "Samsung", Price = 78000 };
+            // get catagory from db
+            var c = db.Catagories.Find(1);
+            p.Catagory = c;
+
+            db.Products.Add(p);
+            db.SaveChanges();
+        }
+
+        private static void AddNewCatagoryWithNewProduct()
+        {
+            Catagory c = new Catagory { Name = "Smart Watches" };
+            Product p = new Product { Name = "I Watch", Price = 10000, Brand = "Apple", Catagory = c };
             ProductECatelogDataContext db = new ProductECatelogDataContext();
             db.Products.Add(p);
-            db.Catagories.Add(c);
+            //db.Catagories.Add(c);
             db.SaveChanges();
-
         }
 
         private static void Edit()

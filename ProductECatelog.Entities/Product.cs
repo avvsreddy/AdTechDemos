@@ -18,7 +18,8 @@ namespace ProductECatelog.Entities
         //public int ProfitMargin { get; set; }
         [MaxLength(100)] public string? Brand { get; set; }
 
-        public Catagory Catagory { get; set; }
+        public virtual Catagory Catagory { get; set; } // navigation property
 
+        public virtual List<Supplier> Suppliers { get; set; } = new List<Supplier>();
     }
 }

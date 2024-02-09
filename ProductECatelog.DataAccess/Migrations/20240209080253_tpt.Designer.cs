@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProductECatelog.DataAccess;
 
@@ -10,9 +11,11 @@ using ProductECatelog.DataAccess;
 namespace ProductECatelog.DataAccess.Migrations
 {
     [DbContext(typeof(ProductECatelogDataContext))]
-    partial class ProductECatelogDataContextModelSnapshot : ModelSnapshot
+    [Migration("20240209080253_tpt")]
+    partial class tpt
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,8 +26,6 @@ namespace ProductECatelog.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.HasSequence("PersonSequence");
 
             modelBuilder.Entity("ProductECatelog.Entities.Catagory", b =>
                 {
@@ -47,10 +48,9 @@ namespace ProductECatelog.DataAccess.Migrations
                 {
                     b.Property<int>("PersonID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValueSql("NEXT VALUE FOR [PersonSequence]");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseSequence(b.Property<int>("PersonID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PersonID"));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -70,9 +70,9 @@ namespace ProductECatelog.DataAccess.Migrations
 
                     b.HasKey("PersonID");
 
-                    b.ToTable((string)null);
+                    b.ToTable("People");
 
-                    b.UseTpcMappingStrategy();
+                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("ProductECatelog.Entities.Product", b =>
@@ -131,7 +131,7 @@ namespace ProductECatelog.DataAccess.Migrations
                     b.Property<int>("Discount")
                         .HasColumnType("int");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("ProductECatelog.Entities.Supplier", b =>
@@ -171,6 +171,24 @@ namespace ProductECatelog.DataAccess.Migrations
                     b.HasOne("ProductECatelog.Entities.Supplier", null)
                         .WithMany()
                         .HasForeignKey("SuppliersPersonID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ProductECatelog.Entities.Customer", b =>
+                {
+                    b.HasOne("ProductECatelog.Entities.Person", null)
+                        .WithOne()
+                        .HasForeignKey("ProductECatelog.Entities.Customer", "PersonID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ProductECatelog.Entities.Supplier", b =>
+                {
+                    b.HasOne("ProductECatelog.Entities.Person", null)
+                        .WithOne()
+                        .HasForeignKey("ProductECatelog.Entities.Supplier", "PersonID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
