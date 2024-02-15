@@ -1,4 +1,5 @@
 ﻿using KnowledgeHubPortal.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -15,6 +16,7 @@ namespace KnowledgeHubPortal.WebUI.MVC.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Create()
         {
             // return empty view for collecting article info
@@ -28,6 +30,7 @@ namespace KnowledgeHubPortal.WebUI.MVC.Controllers
             return View();
         }
         [HttpPost]
+        [Authorize]
         public IActionResult Create(Article article)
         {
             // receive article data for saving
@@ -52,7 +55,7 @@ namespace KnowledgeHubPortal.WebUI.MVC.Controllers
             return RedirectToAction("Create");
         }
 
-
+        [Authorize(Roles = "admin")]
         public IActionResult Review()
         {
             // return articles for review along with catagories
@@ -61,14 +64,14 @@ namespace KnowledgeHubPortal.WebUI.MVC.Controllers
             return View(articlesForReview);
 
         }
-
+        [Authorize(Roles = "admin")]
         public IActionResult Approve(int[] ids)
         {
             articleRepo.Approve(ids);
             TempData["Message"] = $"{ids.Length} Articles Approved";
             return RedirectToAction("Review");
         }
-
+        [Authorize(Roles = "admin")]
         public IActionResult Reject(int[] ids)
         {
             articleRepo.Reject(ids);

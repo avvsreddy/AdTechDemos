@@ -1,10 +1,12 @@
 ﻿using KnowledgeHubPortal.DataAccess;
 using KnowledgeHubPortal.Domain;
 using KnowledgeHubPortal.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KnowledgeHubPortal.WebUI.MVC.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class CatagoriesController : Controller
     {
         // .../catagories/list

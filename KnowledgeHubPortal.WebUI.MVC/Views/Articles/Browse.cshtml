@@ -6,20 +6,26 @@
 
 <h1>Browse Articles</h1>
 <hr />
-<div class="container bg-info">
-    <form asp-action="Browse" asp-controller="Articles" method="post">
-    Select Catagory: <select name="catagoryId" asp-items="@ViewBag.Catagories"></select> 
-                     <button type="submit">Search</button>
- </form>
+<div class="container bg-info p-3 ">
+    <div class="row">
+        <div class="col">
+            <form asp-action="Browse" asp-controller="Articles" method="post">
+                Select Catagory: <select name="catagoryId" asp-items="@ViewBag.Catagories"></select>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="col">
+            <div class=" container align-content-end">
+                
+                <partial name="_SearchArticlePartial" />
+
+            </div>
+        </div>
+    </div>
+   
 </div>
 <hr />
-<div class="bg-light">
 
-    <form asp-action="Browse" asp-controller="Articles" method="post">
-        <input type="text" name="searchText" placeholder="Enter text to search"  /> <button>Search</button>
-    </form>
-
-</div>
 
 
 
