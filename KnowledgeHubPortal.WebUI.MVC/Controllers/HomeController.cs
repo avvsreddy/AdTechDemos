@@ -6,16 +6,12 @@ namespace KnowledgeHubPortal.WebUI.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
+        // http://domainname.com/home/index
         public IActionResult Index()
         {
             return View();
+
         }
 
         public IActionResult Privacy()
@@ -28,5 +24,13 @@ namespace KnowledgeHubPortal.WebUI.MVC.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        public IActionResult Contactus()
+        {
+            return View();
+        }
+
+
     }
 }

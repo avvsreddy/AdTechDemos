@@ -1,0 +1,71 @@
+﻿@model IEnumerable<KnowledgeHubPortal.Domain.Entities.Article>
+
+@{
+    ViewData["Title"] = "Browse";
+}
+
+<h1>Browse Articles</h1>
+<hr />
+<div class="container bg-info">
+    <form asp-action="Browse" asp-controller="Articles" method="post">
+    Select Catagory: <select name="catagoryId" asp-items="@ViewBag.Catagories"></select> 
+                     <button type="submit">Search</button>
+ </form>
+</div>
+<hr />
+<div class="bg-light">
+
+    <form asp-action="Browse" asp-controller="Articles" method="post">
+        <input type="text" name="searchText" placeholder="Enter text to search"  /> <button>Search</button>
+    </form>
+
+</div>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PostedBy)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Catagory.Name)
+            </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+
+            <td>
+                <a href="@item.ArticleURL" target="_blank">@item.Title</a>
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PostedBy)
+            </td>
+            <td>
+                @item.Catagory.Name
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,39 @@
+﻿@model List<KnowledgeHubPortal.Domain.Entities.Catagory> 
+
+
+
+<h2>Catagories List (@Model.Count)</h2>
+<hr />
+@if (TempData["Message"] != null && TempData["Message"].ToString().Length > 0)
+{
+<div class="alert alert-primary" role="alert">
+    @TempData["Message"]
+</div>
+}
+
+<!-- Pure HTML Tags-->
+<!--<a href="/Home/Index">Goto Home</a>
+<br />-->
+<!-- MVC Helper Tags -->
+<!--<a asp-controller="Home" asp-action="Index">Goto Home</a>
+<br />-->
+<!-- Html Helper Methods -->
+<!--@Html.ActionLink("Goto Home","Index","Home")-->
+
+<table class="table  table-bordered bg-info" >
+    <tr>
+        <th> Catagory Name </th>
+        <th> Description </th>
+    </tr>
+
+    @foreach (var cat in Model)
+    {
+        <tr>
+            <td>@cat.Name</td>
+            <td>@cat.Description</td>
+        </tr>
+    }
+
+
+</table>
+
