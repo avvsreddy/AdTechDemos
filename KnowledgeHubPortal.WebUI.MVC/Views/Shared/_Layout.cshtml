@@ -26,23 +26,26 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
 
+
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                        {
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Catagories" asp-action="Create">Create Catagory</a>
                         </li>
-
-
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Catagories" asp-action="List">List Catagories</a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Articles" asp-action="Create">Submit Article</a>
-                        </li>
-
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Articles" asp-action="Review">Review Articles</a>
                         </li>
+                        }
 
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Articles" asp-action="Create">Submit Article</a>
+                        </li>
+                        }
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Articles" asp-action="Browse">Browse Articles</a>
                         </li>
@@ -68,6 +71,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

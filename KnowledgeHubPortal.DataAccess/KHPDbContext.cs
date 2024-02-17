@@ -3,12 +3,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace KnowledgeHubPortal.DataAccess
 {
-    internal class KHPDbContext : DbContext
+    public class KHPDbContext : DbContext
     {
         // configure the db
+
+        // IoC
+        public KHPDbContext(DbContextOptions<KHPDbContext> options)
+            : base(options)
+        {
+        }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=KHPDB2024;Integrated Security=true");
+
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=KHPDB2024;Integrated Security=true");
+            }
         }
 
         // configure the tables

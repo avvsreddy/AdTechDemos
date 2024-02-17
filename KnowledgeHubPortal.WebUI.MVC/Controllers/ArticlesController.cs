@@ -1,15 +1,28 @@
-﻿using KnowledgeHubPortal.Domain.Entities;
+﻿using KnowledgeHubPortal.Domain;
+using KnowledgeHubPortal.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.OutputCaching;
 
 namespace KnowledgeHubPortal.WebUI.MVC.Controllers
 {
     public class ArticlesController : Controller
     {
 
-        private KnowledgeHubPortal.DataAccess.ArticlesEFRepository articleRepo = new DataAccess.ArticlesEFRepository();
-        private KnowledgeHubPortal.DataAccess.CatagoriesEFRepository catRepo = new DataAccess.CatagoriesEFRepository();
+        //private KnowledgeHubPortal.DataAccess.ArticlesEFRepository articleRepo = new DataAccess.ArticlesEFRepository();
+        //private KnowledgeHubPortal.DataAccess.CatagoriesEFRepository catRepo = new DataAccess.CatagoriesEFRepository();
+
+        private IArticlesRepository articleRepo = null;
+        private ICatagoriesRepository catRepo = null;
+
+        public ArticlesController(IArticlesRepository articlesRepo, ICatagoriesRepository catRepo)
+        {
+            this.catRepo = catRepo;
+            this.articleRepo = articlesRepo;
+        }
+
+
         public IActionResult Index()
         {
             return View();
@@ -79,6 +92,7 @@ namespace KnowledgeHubPortal.WebUI.MVC.Controllers
             return RedirectToAction("Review");
         }
 
+        [OutputCache(Duration = 30)]
         public IActionResult Browse(int catagoryId = 0, string searchText = "")
         {
             List<Article> browseArticles;
@@ -92,6 +106,10 @@ namespace KnowledgeHubPortal.WebUI.MVC.Controllers
             var catagories = from c in catRepo.ListAll()
                              select new SelectListItem { Text = c.Name, Value = c.CatagoryID.ToString() };
             ViewBag.Catagories = catagories;
+
+            //Thread.Sleep(5000);
+            ViewBag.Time = DateTime.Now.ToString();
+
             return View(browseArticles);
         }
 

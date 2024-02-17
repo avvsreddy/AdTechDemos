@@ -1,5 +1,4 @@
-﻿using KnowledgeHubPortal.DataAccess;
-using KnowledgeHubPortal.Domain;
+﻿using KnowledgeHubPortal.Domain;
 using KnowledgeHubPortal.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,10 +8,21 @@ namespace KnowledgeHubPortal.WebUI.MVC.Controllers
     [Authorize(Roles = "admin")]
     public class CatagoriesController : Controller
     {
+
         // .../catagories/list
-        private ICatagoriesRepository repo = new CatagoriesEFRepository();// DIP
+        private ICatagoriesRepository repo = null; //new CatagoriesEFRepository();// DIP
+
+
+        public CatagoriesController(ICatagoriesRepository repo)
+        {
+            this.repo = repo;
+        }
+
         public IActionResult List()
         {
+
+
+
             // get all catagories from model
             var catagories = repo.ListAll();
             // send the catagories to view 

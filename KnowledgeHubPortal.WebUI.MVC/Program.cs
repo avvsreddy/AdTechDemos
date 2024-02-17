@@ -1,3 +1,5 @@
+using KnowledgeHubPortal.DataAccess;
+using KnowledgeHubPortal.Domain;
 using KnowledgeHubPortal.WebUI.MVC.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -16,13 +18,28 @@ namespace KnowledgeHubPortal.WebUI.MVC
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+            builder.Services.AddDbContext<KHPDbContext>(options =>
+                options.UseSqlServer(connectionString));
+
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            builder.Services.AddScoped<ICatagoriesRepository, CatagoriesEFRepository>();
+            builder.Services.AddScoped<IArticlesRepository, ArticlesEFRepository>();
 
 
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddOutputCache(options =>
+            {
+                // Add a base policy that applies to all endpoints
+                options.AddBasePolicy(basePolicy => basePolicy.Expire(TimeSpan.FromSeconds(120)));
+
+                // Add a named policy that applies to selected endpoints
+                options.AddPolicy("Expire20", policyBuilder => policyBuilder.Expire(TimeSpan.FromSeconds(20)));
+            });
+
 
             var app = builder.Build();
 
@@ -44,7 +61,7 @@ namespace KnowledgeHubPortal.WebUI.MVC
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseOutputCache();
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");

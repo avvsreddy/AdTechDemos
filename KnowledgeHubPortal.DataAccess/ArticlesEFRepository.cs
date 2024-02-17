@@ -7,7 +7,14 @@ namespace KnowledgeHubPortal.DataAccess
 
     public class ArticlesEFRepository : IArticlesRepository
     {
-        private KHPDbContext db = new KHPDbContext();
+        private KHPDbContext db = null;
+
+        public ArticlesEFRepository(KHPDbContext db)
+        {
+
+            this.db = db;
+
+        }
         public void Approve(int[] articleIds)
         {
             // approve articles

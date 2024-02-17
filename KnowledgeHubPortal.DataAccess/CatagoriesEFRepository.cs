@@ -5,7 +5,12 @@ namespace KnowledgeHubPortal.DataAccess
 {
     public class CatagoriesEFRepository : ICatagoriesRepository
     {
-        private KHPDbContext db = new KHPDbContext();
+        private KHPDbContext db = null; //new KHPDbContext();
+
+        public CatagoriesEFRepository(KHPDbContext db)
+        {
+            this.db = db;
+        }
         public void Create(Catagory catagory)
         {
             db.Catagories.Add(catagory);
