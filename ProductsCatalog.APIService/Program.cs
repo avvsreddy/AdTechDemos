@@ -1,4 +1,5 @@
 
+using Microsoft.AspNet.OData.Extensions;
 using Microsoft.EntityFrameworkCore;
 using ProductsCatalog.APIService.Models.DataAccess;
 
@@ -19,26 +20,40 @@ namespace ProductsCatalog.APIService
 
 
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddXmlSerializerFormatters();
+
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            builder.Services.AddOData();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
+
+
+
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
 
+            app.UseHttpsRedirection();
+            app.UseRouting();
             app.UseAuthorization();
 
 
-            app.MapControllers();
+            //app.MapControllers();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.EnableDependencyInjection();
+                endpoints.Select().OrderBy().Filter().MaxTop(100).SkipToken();
+                endpoints.MapControllers();
+            });
+
 
             app.Run();
         }

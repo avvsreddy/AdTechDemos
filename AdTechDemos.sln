@@ -135,7 +135,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API Service", "API Service"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API Client", "API Client", "{BBF87BF9-3FC1-4D64-930D-279DCCD6A095}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsCatalog.APIService", "ProductsCatalog.APIService\ProductsCatalog.APIService.csproj", "{0ED8444A-1A05-4A1A-BB1A-04D19F69CCC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsCatalog.APIService", "ProductsCatalog.APIService\ProductsCatalog.APIService.csproj", "{0ED8444A-1A05-4A1A-BB1A-04D19F69CCC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClientConsoleApp", "ApiClientConsoleApp\ApiClientConsoleApp.csproj", "{7A739761-253A-4531-9AAD-4A4109A8F1A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -319,6 +321,10 @@ Global
 		{0ED8444A-1A05-4A1A-BB1A-04D19F69CCC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ED8444A-1A05-4A1A-BB1A-04D19F69CCC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ED8444A-1A05-4A1A-BB1A-04D19F69CCC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A739761-253A-4531-9AAD-4A4109A8F1A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A739761-253A-4531-9AAD-4A4109A8F1A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A739761-253A-4531-9AAD-4A4109A8F1A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A739761-253A-4531-9AAD-4A4109A8F1A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -372,6 +378,7 @@ Global
 		{E6B000A9-279A-42A6-9120-8CBD83CF867E} = {5C38D315-561C-44DB-979E-525308243C18}
 		{BBF87BF9-3FC1-4D64-930D-279DCCD6A095} = {5C38D315-561C-44DB-979E-525308243C18}
 		{0ED8444A-1A05-4A1A-BB1A-04D19F69CCC4} = {E6B000A9-279A-42A6-9120-8CBD83CF867E}
+		{7A739761-253A-4531-9AAD-4A4109A8F1A4} = {BBF87BF9-3FC1-4D64-930D-279DCCD6A095}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0E6D2675-AE11-4F3C-A90A-FE938236480C}
